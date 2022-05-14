@@ -1,0 +1,58 @@
+<template>
+  <section class="ComprehensicePractise">
+      <ul>
+          <li><button @click="addAge">新增年龄属性</button></li>
+          <li></li>
+      </ul>
+    
+    <div v-if="student.age">年龄{{ student.age }}</div>
+    <button @click="changeOneRecord">更改第一条记录</button>
+    <ul>
+      <li v-for="item in student.hobby" :key="item">
+        {{ item }}
+      </li>
+    </ul>
+  </section>
+</template>
+
+<script>
+export default {
+  name: "ComprehensicePractise",
+  data() {
+    return {
+      student: {
+        hobby: ["抽烟致癌", "喝酒肥胖", "烫头坐牢"]
+      }
+    };
+  },
+  components: {},
+  watch: {},
+  mounted() {},
+  methods: {
+    changeOneRecord() {
+      //this.hobby[0]='学习'  //不生效
+      // 方法一
+      //this.hobby.splice(0,1,'学习')
+      // 方法二
+      this.$set(this.student.hobby, 0, "学习");
+    },
+    addAge() {
+      this.$set(this.student, "age", 88);
+    }
+  }
+};
+</script>
+
+<style>
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+li {
+  flex: 1;
+  line-height: 50px;
+}
+</style>

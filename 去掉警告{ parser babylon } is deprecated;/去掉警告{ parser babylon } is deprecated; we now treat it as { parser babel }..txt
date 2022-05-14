@@ -1,0 +1,13 @@
+{ parser: "babylon" } is deprecated; we now treat it as { parser: "babel" }.  
+测试项目警告提示，让警告消失                             15
+
+//修改前
+// prettify render fn
+    // if (!isProduction) {
+    //   code = prettier.format(code, { semi: false, parser: 'babylon' })
+// }
+ 
+//修改后
+if (!isProduction) {
+    code = prettier.format(code, { semi: false, parser: 'babel' })
+}

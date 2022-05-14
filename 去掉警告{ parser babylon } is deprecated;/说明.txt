@@ -1,0 +1,7 @@
+位置 D:\test\vue-key\node_modules\vue-loader\lib\template-compiler\index.js
+
+
+        // prettify render fn
+        if (!isProduction) {
+            code = prettier.format(code, { semi: false, parser: 'babel' })
+        }
